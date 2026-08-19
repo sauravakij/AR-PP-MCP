@@ -1,0 +1,19 @@
+{
+  "name": "production-plan-variance-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing read-only tools for the Production Plan Variance & Issue Tracking dashboard (erp.peopledesk.io / DWH database).",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "express": "^4.21.1",
+    "mssql": "^11.0.1",
+    "zod": "^3.23.8"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "production-plan-variance": {
+      "type": "url",
+      "url": "https://YOUR-HOSTED-DOMAIN/mcp",
+      "description": "Read-only access to the Production Plan Variance & Issue Tracking dashboard (Hashem Rice Mills / AKIJ DWH). No credentials required — the server holds them."
+    }
+  }
+}
