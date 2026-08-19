@@ -1,0 +1,12 @@
+{
+  "framework": null,
+  "rewrites": [
+    { "source": "/mcp", "destination": "/api/mcp" }
+  ],
+  "functions": {
+    "api/mcp.js": {
+      "memory": 512,
+      "maxDuration": 30
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "production-plan-variance": {
+      "type": "url",
+      "url": "https://ar-pp-mcp.vercel.app/mcp",
+      "headers": {
+        "x-api-key": "${MCP_API_KEY}"
+      },
+      "description": "Read-only access to the Production Plan Variance & Issue Tracking dashboard (Hashem Rice Mills / AKIJ DWH). No credentials required — the server holds them."
+    }
+  }
+}
