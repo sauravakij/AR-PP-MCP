@@ -151,7 +151,8 @@ export function dateRange(fromDate, toDate) {
 
 function isAuthorized(req) {
   const expected = process.env.MCP_API_KEY;
-  const supplied = req.get("x-api-key") || req.get("authorization")?.replace(/^Bearer\s+/i, "");
+  const getHeader = (name) => (typeof req.get === "function" ? req.get(name) : req.headers?.[name]);
+  const supplied = getHeader("x-api-key") || getHeader("authorization")?.replace(/^Bearer\s+/i, "");
   return Boolean(expected && supplied && supplied === expected);
 }
 
@@ -174,7 +175,7 @@ function closeSession(sessionId) {
 export async function handleMcpRequest(req, res) {
   if (rejectUnauthorized(req, res)) return;
 
-  const sessionId = req.get("mcp-session-id");
+  const sessionId = typeof req.get === "function" ? req.get("mcp-session-id") : req.headers?.["mcp-session-id"];
   try {
     if (req.method === "GET" || req.method === "DELETE") {
       const session = sessionId && sessions.get(sessionId);
